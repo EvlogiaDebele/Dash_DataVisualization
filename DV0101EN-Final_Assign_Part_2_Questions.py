@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
 # In[ ]:
-
-
-
 
 import dash
 from dash import dcc
@@ -14,7 +10,6 @@ from dash.dependencies import Input, Output
 import pandas as pd
 import plotly.graph_objs as go
 import plotly.express as px
-
 
 # Load the data using pandas
 data = pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/historical_automobile_sales.csv')
@@ -84,7 +79,6 @@ def update_output_container(input_year, selected_statistics):
    if(__name__)== 'Recession Period Statistics':
        # Filter the data for recession periods
        recession_data = data[data['Recession'] == 1]
-       .......................
       
 #TASK 2.5: Create and display graphs for Recession Report Statistics
 
