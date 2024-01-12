@@ -48,7 +48,7 @@ app.layout = html.Div([
     html.Div(dcc.Dropdown(
            id='select-year',
            options=[{'label': i, 'value': i} for i in year_list],
-           value='Select-year'
+           value='select-year')
 
     html.Div([#TASK 2.3: Add a division for output display
     html.Div(id='output-container', className='chart-grid', style={flex}),])
@@ -83,7 +83,7 @@ def update_output_container(selected_statistics, input_year):
         # use groupby to create relevant data for plotting
         yearly_rec=recession_data.groupby('Year')['Automobile_Sales'].mean().reset_index()
         R_chart1 = dcc.Graph(
-            figure=px......(yearly_rec, 
+            figure=px.line(yearly_rec, 
                 x='Year',
                 y='Automobile_Sales',
                 title="Average Automobile Sales fluctuation over Recession Period"))
