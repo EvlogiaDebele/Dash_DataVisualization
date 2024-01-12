@@ -61,7 +61,7 @@ def update_input_container(selected_statistics):
     if selected_statistics =='Yearly Statistics': 
         return False
     else: 
-        return ......
+        return True
 
 #Callback for plotting
 # Define the callback function to update the input container based on the selected statistics
@@ -88,8 +88,8 @@ def update_output_container(selected_statistics, input_year):
 
 #Plot 2 Calculate the average number of vehicles sold by vehicle type       
         # use groupby to create relevant data for plotting
-        average_sales =recession_data.groupby('Vehicle_Type')['Automobile_Sales']mean().reset_index()                          
-       R_chart2  = dcc.Graph(
+        average_sales =recession_data.groupby ('Vehicle_Type')['Automobile_Sales'].mean().reset_index()                         
+        R_chart2 = dcc.Graph(
            figure=px.bar(average_sales,
                x='Vehicle_Type',
                y='Automobile_Sales',
@@ -97,8 +97,8 @@ def update_output_container(selected_statistics, input_year):
         
 # Plot 3 Pie chart for total expenditure share by vehicle type during recessions
         # use groupby to create relevant data for plotting
-         exp_rec= recession_data.groupby('Vehicle_Type')['Advertising_Expenditure']mean().reset_index()                          
-         R_chart3  = dcc.Graph(
+        exp_rec= recession_data.groupby('Vehicle_Type')['Advertising_Expenditure'].mean().reset_index()                          
+        R_chart3 = dcc.Graph(
            figure=px.pie(exp_data,
                Values='Advertising_Expenditure',
                names='Vehicle_Type',
