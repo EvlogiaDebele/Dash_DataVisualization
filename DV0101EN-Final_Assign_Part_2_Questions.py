@@ -39,16 +39,14 @@ app.layout = html.Div([
             'font-size': 24}),#May include style for title
     html.Div([#TASK 2.2: Add two dropdown menus
         html.Label("Select Statistics:"),
-    dcc.Dropdown(
-            id='dropdown-statistics',
+        dcc.Dropdown(
+            id='dropdown-statistcis',
             options=dropdown_options,
-            value='Select Statistics'
-        )])
-        
-    html.Div([dcc.Dropdown(
-           id='select-year',
-           options=[{'label': i, 'value': i} for i in year_list],
-           value='select-year')])
+            value='Select Statistics')]),
+    html.Div(dcc.Dropdown(
+            id='select-year',
+            options=[{'label': i, 'value': i} for i in year_list],
+            value='select-year')),
 
     html.Div([#TASK 2.3: Add a division for output display
     html.Div(id='output-container', className='chart-grid', style={flex}),])
